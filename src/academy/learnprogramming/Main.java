@@ -9,9 +9,9 @@ public class Main {
 
         BasicBurger basicBurger = new BasicBurger("White bread", "Chicken");
 
-        basicBurger.Selecting();
+        /*basicBurger.Selecting();*/
 
-
-
+        HealthyBurger healthyBurger = new HealthyBurger("brown Bread", "Vegan meat");
+        healthyBurger.Selecting();
     }
 }

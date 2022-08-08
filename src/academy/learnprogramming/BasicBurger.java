@@ -15,7 +15,6 @@ public class BasicBurger {
     private int totalPrice;
     private int num;
 
-
     //in the Constructor the prices of the additions are set.
     public BasicBurger(String bread, String meat) {
         Lettuce = 1;
@@ -28,6 +27,9 @@ public class BasicBurger {
         this.meat = meat;
         this.totalPrice = 5;
         this.num = 0;
+    }
+
+    public BasicBurger() {
     }
 
     public int getLettuce() {
@@ -57,7 +59,9 @@ public class BasicBurger {
     public int getTotalPrice() {
         return totalPrice;
     }
-
+    public int getNum() {
+        return num;
+    }
 
     //letting the customer select an addition to the burger.
     //the code could be simplified using a for loop but to get better at recursive i preferred to use this method.
@@ -115,7 +119,12 @@ public class BasicBurger {
         System.out.println("Your Total price is: " +totalPrice);
     }else{
              num++;
-        Selecting();
+             HealthyBurger healthyBurger = new HealthyBurger();
+             if (healthyBurger.isFlag() == true){
+                 healthyBurger.Selecting();
+             }else {
+                 Selecting();
+             }
     }
   }
 }
