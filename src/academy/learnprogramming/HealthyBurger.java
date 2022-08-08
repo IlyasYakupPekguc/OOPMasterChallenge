@@ -6,8 +6,8 @@ public class HealthyBurger extends BasicBurger{
 
     private int healthySauce;
     private int cucumber;
-    private int totalPrice = getTotalPrice();
-    private int num;
+    private int totalPrice;
+    private int num = getNum();
     private boolean flag = true;
 
     public HealthyBurger() {
@@ -17,6 +17,7 @@ public class HealthyBurger extends BasicBurger{
         super(bread, meat);
         this.healthySauce = 7;
         this.cucumber = 6;
+        this.totalPrice = 7;
     }
 
     public boolean isFlag() {
@@ -24,11 +25,20 @@ public class HealthyBurger extends BasicBurger{
     }
 
     @Override
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    @Override
     public void Selecting() {
         int choice = 0;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Select \n 0 for the healthy Sauce \n 1 for the cucumber \n 2 for the standart additions");
+        System.out.println("Select \n 0 for the healthy Sauce \n 1 for the cucumber \n 2 for the standard additions \n and 3 to stop adding an addition.");
         choice = sc.nextInt();
 
         switch (choice){
@@ -44,6 +54,12 @@ public class HealthyBurger extends BasicBurger{
 
             case 2:
                 super.Selecting();
+                break;
+
+            case 3:
+                System.out.println("You didn't want or could add a new addition.");
+                System.out.println("Your Total price is: " +totalPrice);
+                num = 3;
                 break;
 
             default:

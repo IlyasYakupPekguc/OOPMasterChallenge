@@ -105,6 +105,7 @@ public class BasicBurger {
             case 6:
                 System.out.println("You didn't want or could add a new addition.");
                 System.out.println("Your Total price is: " +totalPrice);
+                num = 3;
                 break;
 
             default:
@@ -121,6 +122,7 @@ public class BasicBurger {
              num++;
              HealthyBurger healthyBurger = new HealthyBurger();
              if (healthyBurger.isFlag() == true){
+                 healthyBurger.setTotalPrice(totalPrice);
                  healthyBurger.Selecting();
              }else {
                  Selecting();
